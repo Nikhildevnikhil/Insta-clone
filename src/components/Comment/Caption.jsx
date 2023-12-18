@@ -1,6 +1,6 @@
 import { Avatar, Flex, Link, Text } from "@chakra-ui/react";
-import { timeAgo } from "../../utils/TimeAgo";
 import userProfileStore from "../../store/userProfileStore";
+import { timeAgo } from "/path/to/src/utils/Timeago";
 
 const Caption = ({ post }) => {
   const userProfile = userProfileStore((state) => state.userProfile);
