@@ -18,7 +18,7 @@ import usePostComment from "../../hooks/usePostComment";
 import useAuthStore from "../../store/authStore";
 import useLikePost from "./../../hooks/useLikePost";
 import CommentsModal from "../Modals/CommentsModal";
-import { timeAgo } from "../../utils/TimeAgo";
+import { timeAgo } from "../../utils/Timeago";
 
 const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
   const { isLiked, likes, handleLikePost } = useLikePost(post);

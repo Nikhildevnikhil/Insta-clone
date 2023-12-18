@@ -1,8 +1,8 @@
 import { Avatar, Flex, Skeleton, SkeletonCircle, Text } from "@chakra-ui/react";
 import useGetUserProfileById from "../../hooks/useGetUserProfileById";
 import { Link } from "react-router-dom";
+import { timeAgo } from "../../utils/Timeago";
 
-import { timeAgo } from "../../utils/TimeAgo";
 
 const Comment = ({ comment }) => {
   const { isLoading, userProfile } = useGetUserProfileById(comment.createdBy);
