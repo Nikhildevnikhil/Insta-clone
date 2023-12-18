@@ -1,4 +1,4 @@
-export const timeAgo = (timestamp) => {
+ export const timeAgo = (timestamp) => {
   const now = Date.now();
   const secondsAgo = Math.floor((now - timestamp) / 1000);
 
@@ -18,3 +18,5 @@ export const timeAgo = (timestamp) => {
     return `${weeksAgo}w ago`;
   }
 };
+
+

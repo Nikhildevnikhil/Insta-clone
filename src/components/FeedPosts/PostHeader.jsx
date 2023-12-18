@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useFollowUser from "../../hooks/useFollowUser";
-import { timeAgo } from "../../utils/timeAgo";
+import { timeAgo } from "../../utils/TimeAgo";
 
 const PostHeader = ({ post, creatorProfile }) => {
   const { handleFollowUser, isFollowing, isUpdating } = useFollowUser(
