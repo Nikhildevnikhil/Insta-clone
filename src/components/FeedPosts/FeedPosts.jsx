@@ -7,7 +7,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import FeedPost from "./FeedPost";
-import { useEffect, useState } from "react";
 import useGetFeedPosts from "../../hooks/useGetFeedPosts";
 
 const FeedPosts = () => {
