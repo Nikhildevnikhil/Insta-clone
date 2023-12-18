@@ -16,22 +16,22 @@ import {
 } from "../../assets/constants";
 import usePostComment from "../../hooks/usePostComment";
 import useAuthStore from "../../store/authStore";
-import useLikePost from './../../hooks/useLikePost';
+import useLikePost from "./../../hooks/useLikePost";
 import CommentsModal from "../Modals/CommentsModal";
-import { timeAgo } from "../../utils/Timeago";
+import { timeAgo } from "../../utils/timeAgo";
 
-const PostFooter = ({post,isProfilePage,creatorProfile}) => {
-  const {isLiked,likes,handleLikePost} = useLikePost(post);
-  const {isCommenting,handlePostComment} = usePostComment();
-  const authUser = useAuthStore(state => state.user);
-  const [comment,setComment] = useState();
+const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
+  const { isLiked, likes, handleLikePost } = useLikePost(post);
+  const { isCommenting, handlePostComment } = usePostComment();
+  const authUser = useAuthStore((state) => state.user);
+  const [comment, setComment] = useState();
   const commentRef = useRef(null);
-  const {isOpen,onOpen,onClose} = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const handleSubmitComment = async () => {
-    await handlePostComment(post.id,comment);
+    await handlePostComment(post.id, comment);
     setComment("");
-  }
-  
+  };
+
   return (
     <Box mb={10} mt={"auto"}>
       <Flex alignItems={"center"} gap={4} w={"full"} pt={0} mb={2} mt={4}>
@@ -63,12 +63,19 @@ const PostFooter = ({post,isProfilePage,creatorProfile}) => {
             </Text>
           </Text>
           {post.comments.length > 0 && (
-            <Text fontSize={"sm"} color={"gray"} cursor={"pointer"} onClick={onOpen}>
+            <Text
+              fontSize={"sm"}
+              color={"gray"}
+              cursor={"pointer"}
+              onClick={onOpen}
+            >
               View all {post.comments.length} comments
             </Text>
           )}
           {/* Comments Modal onlly in the home page */}
-          {isOpen ? <CommentsModal isOpen={isOpen} onClose={onClose} post={post} /> : null}
+          {isOpen ? (
+            <CommentsModal isOpen={isOpen} onClose={onClose} post={post} />
+          ) : null}
         </>
       )}
       {authUser && (

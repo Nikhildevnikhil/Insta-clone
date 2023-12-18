@@ -1,9 +1,9 @@
 import { Avatar, Flex, Link, Text } from "@chakra-ui/react";
-import { timeAgo } from "../../utils/Timeago";
+import { timeAgo } from "../../utils/timeAgo";
 import userProfileStore from "../../store/userProfileStore";
 
-const Caption = ({post}) => {
-    const userProfile = userProfileStore(state => state.userProfile);
+const Caption = ({ post }) => {
+  const userProfile = userProfileStore((state) => state.userProfile);
   return (
     <Flex gap={4}>
       <Link to={`/${userProfile.username}`}>
@@ -24,6 +24,6 @@ const Caption = ({post}) => {
       </Flex>
     </Flex>
   );
-}
+};
 
-export default Caption
+export default Caption;
